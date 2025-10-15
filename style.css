@@ -1,6 +1,5 @@
-html {
-  cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b212e6b71494aa67ff_cursor-pointer%402x.svg") 12 0, pointer;
-}
+html, body {
+  cursor: url('../images/curser.svg') 12 0, auto; }
 
 * {
   box-sizing: border-box;
@@ -33,7 +32,6 @@ height: 100vh;
 background: #ff00bf;
 background-image: linear-gradient(rgba(255,251,0) .1em, transparent .1em), linear-gradient(90deg, rgba(255,251,0) .1em, transparent .1em);
 background-size: 3em 3em;
-  cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b212e6b71494aa67ff_cursor-pointer%402x.svg") 12 0, pointer;
 }
 
 /* Top bar */
@@ -90,7 +88,7 @@ main{
   min-height: 70svh; 
   display: flex;
   justify-content: center; /* horizontal center */
-  align-items: center
+  align-items: center;
  /* border: 2px solid yellow;
   background-color:#ff00bf;
   box-shadow: 0 0 20px 5px Magenta; */
@@ -111,6 +109,7 @@ main{
     opacity: 0;              /* hidden until hero is scrolled past */
     pointer-events: none;    /* disabled until visible */
     transition: opacity .2s ease-in;
+    cursor: url('../images/curser.svg') 12 0, auto;
   }
 
  .feature.is-visible {
@@ -123,6 +122,7 @@ main{
   height: 100%;
   object-fit: contain; /* use 'cover' if you want it to fill/crop */
   display: block;
+  cursor: url('../images/curser.svg') 12 0, auto;
 }
 
 /* Pop-Ups */
@@ -140,13 +140,11 @@ main{
   width: 225px;   /* adjust to your desired card size */
   height: 312px;  /* adjust height as needed */
   display: flex;
-  flex-direction: column;.fotopopup:active { cursor: grabbing; }
-  cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b212e6b71494aa67ff_cursor-pointer%402x.svg") 12 0, pointer;
+  flex-direction: column;
 }
 
 .fotopopup:active {
-  .fotopopup:active { cursor: grabbing; }
-  cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b212e6b71494aa67ff_cursor-pointer%402x.svg") 12 0, pointer;
+
 }
 
 /* the image area will fill the rest */
