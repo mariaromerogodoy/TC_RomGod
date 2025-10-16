@@ -1,4 +1,57 @@
-var topZ = 10; // sets active move element to this + increment
+
+  // Utility: close everything
+  function closeAll(btns) {
+    btns.forEach(btn => {
+      btn.classList.remove('active');
+      btn.textContent = btn.dataset.label;
+      const target = btn.dataset.target;
+      const box = document.getElementById('WrongHidden' + target);
+      if (box) box.classList.remove('show'), box.style.display = 'none';
+    });
+  }
+
+  const buttons = Array.from(document.querySelectorAll('.toggle-btn'));
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const isActive = btn.classList.contains('active');
+      const target = btn.dataset.target;
+      const box = document.getElementById('WrongHidden' + target);
+
+      if (!box) return;
+
+      if (isActive) {
+        // turn X back to label; hide box
+        btn.classList.remove('active');
+        btn.textContent = btn.dataset.label;
+        box.classList.remove('show');
+        box.style.display = 'none';
+      } else {
+        // close others, then activate this one
+        closeAll(buttons);
+        btn.classList.add('active');
+        btn.textContent = 'XXX';
+        box.style.display = 'block';
+        // allow CSS animation class
+        requestAnimationFrame(() => box.classList.add('show'));
+      }
+    });
+  });
+
+  // Close on ESC
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeAll(buttons);
+  });
+
+  // (Optional) click outside modals to close
+  document.addEventListener('click', e => {
+    const isBtn = e.target.classList && e.target.classList.contains('toggle-btn');
+    const isModal = e.target.closest('.hidden');
+    if (!isBtn && !isModal) closeAll(buttons);
+  });
+
+  var topZ = 10; // sets active move element to this + increment
 
 function dragElement(elmnt, container) {
   let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
