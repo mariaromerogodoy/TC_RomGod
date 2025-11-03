@@ -176,21 +176,21 @@ $(function () {
 
 // ---- your toggle mapping stays the same ----
 const toggleImages = [
-  { primary: "../images/tc2.png",  secondary: "../images/tc3.png"  },
-  { primary: "../images/tc4.png",  secondary: "../images/tc5.png"  },
-  { primary: "../images/tc6.png",  secondary: "../images/tc7.png"  },
-  { primary: "../images/tc8.png",  secondary: "../images/tc9.png"  },
-  { primary: "../images/tc10.png", secondary: "../images/tc11.png" },
-  { primary: "../images/tc12.png", secondary: "../images/tc13.png" },
-  { primary: "../images/tc14.png", secondary: "../images/tc15.png" },
-  { primary: "../images/tc16.png", secondary: "../images/tc17.png" },
-  { primary: "../images/tc18.png", secondary: "../images/tc19.png" },
-  { primary: "../images/tc20.png", secondary: "../images/tc21.png" },
-  { primary: "../images/tc22.png", secondary: "../images/tc23.png" },
-  { primary: "../images/tc24.png", secondary: "../images/tc25.png" },
-  { primary: "../images/tc26.png", secondary: "../images/tc27.png" },
-  { primary: "../images/tc28.png", secondary: "../images/tc29.png" },
-  { primary: "../images/tc30.png", secondary: "../images/tc31.png" },
+  { primary: "../imagess/tc2.png",  secondary: "../imagess/tc3.png"  },
+  { primary: "../imagess/tc4.png",  secondary: "../imagess/tc5.png"  },
+  { primary: "../imagess/tc6.png",  secondary: "../imagess/tc7.png"  },
+  { primary: "../imagess/tc8.png",  secondary: "../imagess/tc9.png"  },
+  { primary: "../imagess/tc10.png", secondary: "../imagess/tc11.png" },
+  { primary: "../imagess/tc12.png", secondary: "../imagess/tc13.png" },
+  { primary: "../imagess/tc14.png", secondary: "../imagess/tc15.png" },
+  { primary: "../imagess/tc16.png", secondary: "../imagess/tc17.png" },
+  { primary: "../imagess/tc18.png", secondary: "../imagess/tc19.png" },
+  { primary: "../imagess/tc20.png", secondary: "../imagess/tc21.png" },
+  { primary: "../imagess/tc22.png", secondary: "../imagess/tc23.png" },
+  { primary: "../imagess/tc24.png", secondary: "../imagess/tc25.png" },
+  { primary: "../imagess/tc26.png", secondary: "../imagess/tc27.png" },
+  { primary: "../imagesss/tc28.png", secondary: "../imagess/tc29.png" },
+  { primary: "../imagess/tc30.png", secondary: "../imagess/tc31.png" },
 ];
 
 // Apply toggling to each popup’s image (order-based)
