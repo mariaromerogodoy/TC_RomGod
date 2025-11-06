@@ -1,5 +1,4 @@
 
-  // Utility: close everything
   function closeAll(btns) {
     btns.forEach(btn => {
       btn.classList.remove('active');
@@ -22,36 +21,36 @@
       if (!box) return;
 
       if (isActive) {
-        // turn X back to label; hide box
+        
         btn.classList.remove('active');
         btn.textContent = btn.dataset.label;
         box.classList.remove('show');
         box.style.display = 'none';
       } else {
-        // close others, then activate this one
+       
         closeAll(buttons);
         btn.classList.add('active');
         btn.textContent = 'XXX';
         box.style.display = 'block';
-        // allow CSS animation class
+       
         requestAnimationFrame(() => box.classList.add('show'));
       }
     });
   });
 
-  // Close on ESC
+ 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeAll(buttons);
   });
 
-  // (Optional) click outside modals to close
+ 
   document.addEventListener('click', e => {
     const isBtn = e.target.classList && e.target.classList.contains('toggle-btn');
     const isModal = e.target.closest('.hidden');
     if (!isBtn && !isModal) closeAll(buttons);
   });
 
-  var topZ = 10; // sets active move element to this + increment
+  var topZ = 10; 
 
 function dragElement(elmnt, container) {
   let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -100,21 +99,21 @@ function dragElement(elmnt, container) {
 
 
 $(function () {
-    const YG = document.querySelector(".YG"); // selects the element with class="YG"
+    const YG = document.querySelector(".YG"); 
     const hero = document.querySelector(".hero");
   
-    // Observe when hero scrolls out of view
+   
     const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) {
-            YG.classList.add("is-visible");   // show the header image
+            YG.classList.add("is-visible");   
           } else {
-            YG.classList.remove("is-visible"); // hide it while hero is visible
+            YG.classList.remove("is-visible"); 
           }
         });
       },
-      { threshold: 0.2 } // triggers when ~20% of hero is visible
+      { threshold: 0.2 } 
     );
   
     io.observe(hero);
@@ -124,7 +123,7 @@ $(function () {
 $(function () {
   const feature = document.getElementById("feature");
 
-  // Reveal .feature only after the hero is mostly off-screen
+ 
   const hero = document.querySelector(".hero");
   const io = new IntersectionObserver(
     (entries) => {
@@ -136,11 +135,11 @@ $(function () {
         }
       });
     },
-    { threshold: 0.2 } // when ~20% of hero is visible, keep hidden; show when below that
+    { threshold: 0.2 } 
   );
   io.observe(hero);
 
-  // Random starting positions INSIDE the feature, after images have sizes
+ 
   function randomizePositions() {
     const fw = feature.clientWidth;
     const fh = feature.clientHeight;
@@ -158,23 +157,23 @@ $(function () {
     });
   }
 
-  // Make each popup draggable WITHIN the feature
+ 
   $(".fotopopup").each(function () {
     dragElement(this, feature);
   });
 
-  // Run after all assets load so sizes are correct
+  
   $(window).on("load", function () {
     randomizePositions();
   });
 
-  // Optional: re-pack on resize (keeps them inside if the box shrinks)
+ 
   $(window).on("resize", function () {
     randomizePositions();
   });
 });
 
-// ---- your toggle mapping stays the same ----
+
 const toggleImages = [
   { primary: "../imagess/tc2.png",  secondary: "../imagess/tc3.png"  },
   { primary: "../imagess/tc4.png",  secondary: "../imagess/tc5.png"  },
@@ -193,7 +192,7 @@ const toggleImages = [
   { primary: "../imagess/tc30.png", secondary: "../imagess/tc31.png" },
 ];
 
-// Apply toggling to each popup’s image (order-based)
+
 window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".fotopopup img").forEach((img, index) => {
     const pair = toggleImages[index];
